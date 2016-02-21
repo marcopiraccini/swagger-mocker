@@ -2,8 +2,9 @@
 
 > **Mock generator for mocks**
 
-Inspired by <https://github.com/krakenjs/swaggerize-hapi> .
-TODO
+Inspired by <https://github.com/krakenjs/swaggerize-hapi>, it generates a mock
+under `test` folder.
+
 ### How to run it
 
 TODO
@@ -11,7 +12,7 @@ TODO
 
 ## Contributors
 
-__`seneca-in-practice`__ has been created by:
+__`swagger-mocker`__ has been created by:
 
 <table><tbody>
 <tr><th align="left">Marco Piraccini</th><td><a href="https://github.com/marcopiraccini">GitHub/MarcoPiraccini</a></td><td><a href="http://twitter.com/marcopiraccini">Twitter/@marcopiraccini</a></td></tr>
