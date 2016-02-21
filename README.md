@@ -15,7 +15,7 @@ TODO
 __`swagger-mocker`__ has been created by:
 
 <table><tbody>
-<tr><th align="left">Marco Piraccini</th><td><a href="https://github.com/marcopiraccini">GitHub/MarcoPiraccini</a></td><td><a href="http://twitter.com/marcopiraccini">Twitter/@marcopiraccini</a></td></tr>
+<tr><th align="left">Marco Piraccini</th><td><a href="https://github.com/marcopiraccini">GitHub/MarcoPiraccini</a></td><td><a href="http://twitter.com/marcopiraccini">Twitter/@MarcoPiraccini</a></td></tr>
 </tbody></table>
 
 ## License
