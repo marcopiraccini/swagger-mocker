@@ -9,6 +9,7 @@
   "dependencies": {
     "core-util-is": "^1.0.2",
     "hapi": "^13.0.0",
+    "js-yaml": "^3.5.3",
     "joi": "^8.0.2",
     "swaggerize-hapi": "^1.0.1",
     "swaggerize-routes": "^1.0.6"

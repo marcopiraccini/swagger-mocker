@@ -19,11 +19,12 @@ var SwaggerGenerator = yeoman.Base.extend({
     this.port = this.options.port;
     var swaggerPath = this.options.swaggerPath;
     var swaggerName = path.basename(swaggerPath);
-    this.swaggerApi = this.destinationPath('test/' + this.options.appName + '/config/' + swaggerName);
+    this.swaggerApi = './config/' + swaggerName;
 
     this.template('./_index.js', 'test/' + this.options.appName + '/index.js');
     this.template('./_package.json', 'test/' + this.options.appName + '/package.json');
     this.copy('./swagger-plugin.js', 'test/' + this.options.appName + '/swagger-plugin.js');
+    this.copy('./loadapi.js', 'test/' + this.options.appName + '/loadapi.js');
     this.copy(swaggerPath, 'test/' + this.options.appName + '/config/' + swaggerName);
     mkdirp.sync(this.destinationPath('test/' + this.options.appName + '/handlers'));
 
@@ -42,9 +43,6 @@ var SwaggerGenerator = yeoman.Base.extend({
     },
 
   end: function() {
-    this.installDependencies({
-      skipInstall: this.options['skip-install']
-    });
   }
 });
 

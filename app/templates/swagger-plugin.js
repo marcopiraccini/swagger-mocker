@@ -6,9 +6,10 @@
 var Routes = require('swaggerize-routes');
 var Utils = require('swaggerize-routes/lib/utils');
 var Joi = require('joi');
-var Yaml = require('js-yaml');
 var fs = require('fs');
 var Thing = require('core-util-is');
+var loadApi = require('./loadapi');
+
 
 module.exports = {
     register: function (server, options, next) {
@@ -114,13 +115,6 @@ module.exports = {
     }
 };
 
-function loadApi(apiPath) {
-    if (apiPath.indexOf('.yaml') === apiPath.length - 5 || apiPath.indexOf('.yml') === apiPath.length - 4) {
-        var api = fs.readFileSync(apiPath);
-        return Yaml.load(api);
-    }
-    return require(apiPath);
-}
 
 module.exports.register.attributes = {
     name: 'swagger',

@@ -4,8 +4,7 @@ var yeoman = require('yeoman-environment');
 var minimist = require('minimist');
 var program = require('commist')();
 var path = require('path');
-var env = yeoman.createEnv();
-env.register('./app', 'npm:app');
+var validateSwagger = require('./lib/validate');
 
 function argify(args) {
   return minimist(args, {
@@ -49,13 +48,22 @@ var generate = function(args) {
 
 var validate = function(args) {
   args = argify(args);
-  console.log("VALIDATION CALLED. TODO: implement")
+  var swaggerAbsPath = path.resolve( args.swagger);
+  validateSwagger(swaggerAbsPath, function (err, results) {
+    if (err) {
+      return console.log("ERROR in executing validation: ", err);
+    }
+    console.log(results);
+  })
 }
 
 program.register('generate', generate);
 program.register('validate', validate);
 program.register('help', showHelp);
 program.register('--help', showHelp);
+
+var env = yeoman.createEnv();
+env.register('./app', 'npm:app');
 
 function start(argv) {
   var remaining = program.parse(argv);
