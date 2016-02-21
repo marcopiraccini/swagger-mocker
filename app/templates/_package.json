@@ -1,0 +1,16 @@
+{
+  "name": "<%= appName %>",
+  "version": "0.0.1",
+  "description": "Swagger mock",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "dependencies": {
+    "core-util-is": "^1.0.2",
+    "hapi": "^13.0.0",
+    "joi": "^8.0.2",
+    "swaggerize-hapi": "^1.0.1",
+    "swaggerize-routes": "^1.0.6"
+  }
+}

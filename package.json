@@ -1,0 +1,28 @@
+{
+  "name": "swagger-mocker",
+  "version": "0.0.1",
+  "description": "Swagger mock creator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "swagger-generator": "./index.js"
+  },
+  "author": "Marco Piraccini <marco.piraccini@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "commist": "^1.0.0",
+    "core-util-is": "^1.0.2",
+    "hapi": "^13.0.0",
+    "joi": "^8.0.2",
+    "js-yaml": "^3.5.3",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "swaggerize-hapi": "^1.0.1",
+    "swaggerize-routes": "^1.0.6",
+    "yeoman-environment": "^1.5.2",
+    "yeoman-generator": "^0.22.5",
+    "yosay": "^1.1.0"
+  }
+}
