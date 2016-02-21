@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "swagger-generator": "./index.js"
+    "swagger-mocker": "./index.js"
   },
   "author": "Marco Piraccini <marco.piraccini@gmail.com>",
   "license": "MIT",
