@@ -1,6 +1,6 @@
 # Swagger Mocker
 
-> **Mock generator for mocks**
+> **Mock generator and validator for swagger**
 
 Inspired by <https://github.com/krakenjs/swaggerize-hapi>, it generates an HAPI based mock skeleton
 
@@ -77,4 +77,4 @@ __`swagger-mocker`__ has been created by:
 ## License
 **Swagger Mocker** is Copyright (c) 2016
 swagger-mocker contributors (listed above) and licensed under the MIT licence.
-See the included [LICENS](./LICENSE) file for more details
+See the included [LICENSE](./LICENSE) file for more details
