@@ -12,7 +12,7 @@ Install it globally with `npm i swagger-mocker -g`, then:
 
 That will create the mock in `~/test/mymock`
 
-`npm install` is not launched automatically, yoou have to do by yourself.
+`npm install` is not launched automatically, you have to do it by yourself.
 
 This tool can be used also for validation:
 
