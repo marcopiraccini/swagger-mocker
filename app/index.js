@@ -21,12 +21,12 @@ var SwaggerGenerator = yeoman.Base.extend({
     var swaggerName = path.basename(swaggerPath);
     this.swaggerApi = './config/' + swaggerName;
 
-    this.template('./_index.js', 'test/' + this.options.appName + '/index.js');
-    this.template('./_package.json', 'test/' + this.options.appName + '/package.json');
-    this.copy('./swagger-plugin.js', 'test/' + this.options.appName + '/swagger-plugin.js');
-    this.copy('./loadapi.js', 'test/' + this.options.appName + '/loadapi.js');
-    this.copy(swaggerPath, 'test/' + this.options.appName + '/config/' + swaggerName);
-    mkdirp.sync(this.destinationPath('test/' + this.options.appName + '/handlers'));
+    this.template('./_index.js', this.options.targetDir + '/' + this.options.appName + '/index.js');
+    this.template('./_package.json', this.options.targetDir + '/' + this.options.appName + '/package.json');
+    this.copy('./swagger-plugin.js', this.options.targetDir + '/' + this.options.appName + '/swagger-plugin.js');
+    this.copy('./loadapi.js', this.options.targetDir + '/' + this.options.appName + '/loadapi.js');
+    this.copy(swaggerPath, this.options.targetDir + '/' + this.options.appName + '/config/' + swaggerName);
+    mkdirp.sync(this.destinationPath(this.options.targetDir + '/' + this.options.appName + '/handlers'));
 
     // Generates the handlers, one for each path.
     var api = loadApi(swaggerPath);
@@ -38,7 +38,7 @@ var SwaggerGenerator = yeoman.Base.extend({
                 pathnames.push(element);
             }
         });
-        this.copy('handlers/handler.js', 'test/' + this.options.appName + '/handlers/' + pathnames[0] + '.js');
+        this.copy('handlers/handler.js', this.options.targetDir + '/' + this.options.appName + '/handlers/' + pathnames.join('/') + '.js');
       }, this);
     },
 

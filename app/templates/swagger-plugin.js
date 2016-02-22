@@ -16,25 +16,11 @@ module.exports = {
         var routes, basePath;
         options.api = loadApi(options.api);
         options.basedir = options.basedir || process.cwd();
-        options.docspath = Utils.prefix(options.docspath || '/api-docs', '/');
         options.api.basePath = Utils.prefix(options.api.basePath || '/', '/');
         basePath = Utils.unsuffix(options.api.basePath, '/');
 
         //Build routes
         routes = Routes(options);
-
-        //API docs route
-        server.route({
-            method: 'GET',
-            path: basePath + options.docspath,
-            config: {
-                handler: function (request, reply) {
-                    reply(options.api);
-                },
-                cors: options.cors
-            },
-            vhost: options.vhost
-        });
 
         //Add all known routes
         routes.forEach(function (route) {
@@ -93,12 +79,13 @@ module.exports = {
                 });
             }
 
+            console.log('Adding', route.method, basePath + route.path);
+
             //Define the route
             server.route({
                 method: route.method,
                 path: basePath + route.path,
-                config: config,
-                vhost: options.vhost
+                config: config
             });
         });
 

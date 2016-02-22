@@ -2,13 +2,69 @@
 
 > **Mock generator for mocks**
 
-Inspired by <https://github.com/krakenjs/swaggerize-hapi>, it generates a mock
-under `test` folder.
+Inspired by <https://github.com/krakenjs/swaggerize-hapi>, it generates an HAPI based mock skeleton
 
 ### How to run it
 
-TODO
+Install it globally with `npm i swagger-mocker -g`, then:
 
+` swagger-mocker create -s swagger.json -n mymock -t ~/test`
+
+That will create the mock in `~/test/mymock`
+
+`npm install` is not launched automatically, yoou have to do by yourself.
+
+This tool can be used also for validation:
+
+`swagger-mocker validate -s swagger.json`
+
+### Handlers
+
+Handlers skeleton are created into the `handlers` folder, starting from each path/verb defined in the swagger definition.
+Starting from these, you can add mock responses easily. The basic structure for an handler is:
+
+```
+module.exports = {
+    get: function (req, reply) {
+        return reply("GET");
+    },
+    post: function (req, reply) {
+      return reply("POST");
+    },
+    put: function (req, reply) {
+        return reply("PUT");
+    },
+    delete: function (req, reply) {
+      return reply("DELETE");
+    }
+}
+```
+
+For instance, the petstore swagger, the created handlers are:
+
+```
+handlers/pet.js
+handlers/pet/findByStatus.js
+handlers/pet/findByTags.js
+handlers/pet/{petId}.js
+handlers/pet/{petId}/uploadImage.js
+handlers/store/inventory.js
+handlers/store/order.js
+handlers/store/order/{orderId}.js
+handlers/user.js
+handlers/user/createWithArray.js
+handlers/user/createWithList.js
+handlers/user/login.js
+handlers/user/logout.js
+handlers/user/{username}.js
+```
+
+### Options defaults
+<table><tbody>
+<tr><td align="left">-p</td><td>--port</td><td>10010</td></tr>
+<tr><td align="left">-n</td><td>--name</td><td>mock</td></tr>
+<tr><td align="left">-t</td><td>--target</td><td>test</td></tr>
+</tbody></table>
 
 ## Contributors
 

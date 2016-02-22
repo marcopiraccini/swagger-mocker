@@ -11,11 +11,13 @@ function argify(args) {
     alias: {
       p: ['port'],
       s: ['swagger'],
-      n: ['name']
+      n: ['name'],
+      t: ['target']
     },
     defaults: {
       p: 10010,
-      n: 'mock'
+      n: 'mock',
+      t: 'test'
     }
   });
 }
@@ -24,7 +26,7 @@ var showHelp = function() {
   console.log('');
   console.log('usage: swagger-creator <command> <options>');
   console.log('available options:');
-  console.log('generate - generate a mock. port (-p), swagger path (-s) and name (-n) can be specified');
+  console.log('generate - generate a mock. port (-p), swagger path (-s), name (-n) and target dir (-t) can be specified');
   console.log('validate - validate a swagger, (-s) can be specified');
   console.log('help - show this help');
 };
@@ -36,7 +38,8 @@ var generate = function(args) {
   var opts = {
     port: args.port ? args.port: 10010,
     swaggerPath: swaggerAbsPath,
-    appName: args.name ? args.name: 'mock'
+    appName: args.name ? args.name: 'mock',
+    targetDir: args.target ? args.target: 'test'
   }
   env.run('npm:app', opts, function(err) {
     if (err) {
