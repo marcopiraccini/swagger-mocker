@@ -40,7 +40,7 @@ module.exports = {
 }
 ```
 
-For instance, the petstore swagger, the created handlers are:
+For instance, using the petstore swagger, the created handlers are:
 
 ```
 handlers/pet.js
