@@ -6,9 +6,9 @@ module.exports = {
       return reply("POST");
     },
     put: function (req, reply) {
-        return reply("GET");
+        return reply("PUT");
     },
     delete: function (req, reply) {
-      return reply("POST");
+      return reply("DELETE");
     }
 }

@@ -63,7 +63,7 @@ program.register('help', showHelp);
 program.register('--help', showHelp);
 
 var env = yeoman.createEnv();
-env.register('./app', 'npm:app');
+env.register(__dirname + '/app', 'npm:app');
 
 function start(argv) {
   var remaining = program.parse(argv);
