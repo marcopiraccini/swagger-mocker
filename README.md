@@ -59,6 +59,11 @@ handlers/user/logout.js
 handlers/user/{username}.js
 ```
 
+For resources params, change the file name according to the supported values,
+e.g. for `handlers/pet/{petId}.js`, that can be renamed to `handlers/pet/12345.js`.
+That will answer to `http://127.0.0.1:10010/v2/pet/12345`. Of course, if multiple ids must be supported, it's possible
+to add more files.
+
 ### Options defaults
 <table><tbody>
 <tr><td align="left">-p</td><td>--port</td><td>10010</td></tr>
