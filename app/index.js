@@ -53,16 +53,4 @@ function loadApi(apiPath) {
     return require(apiPath);
 }
 
-function matchpath(method, pathnames, handlers) {
-    if (!handlers) {
-        return null;
-    }
-    if (pathnames.length > 1) {
-        pathnames.shift();
-        return matchpath(method, pathnames, handlers[pathnames[0]]);
-    }
-
-    return handlers[pathnames[0]] ? handlers[pathnames[0]] : handlers[method];
-}
-
 module.exports = SwaggerGenerator;
