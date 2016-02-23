@@ -9,6 +9,10 @@
   "bin": {
     "swagger-mocker": "./index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/marcopiraccini/swagger-mocker.git"
+  },
   "author": "Marco Piraccini <marco.piraccini@gmail.com>",
   "license": "MIT",
   "dependencies": {
