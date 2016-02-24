@@ -6,6 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "swagger",
+    "mock",
+    "hapi",
+    "rest",
+    "api"
+  ],
   "bin": {
     "swagger-mocker": "./index.js"
   },
